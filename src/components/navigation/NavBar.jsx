@@ -19,11 +19,9 @@ const NavBar = () => {
     // calling the auth-state-changing listener, to check if there is an active session
     const unsubscribe = onAuthStateChanged(auth, (userInfo) => {
       if (userInfo) {
-        console.log(userInfo)
         setSignedIn(true);
         setUserImage(userInfo.photoURL || null);
       } else {
-        console.log(userInfo)
         setSignedIn(false);
         setUserImage(null);
       }
