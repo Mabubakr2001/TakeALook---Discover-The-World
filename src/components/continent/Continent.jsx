@@ -34,12 +34,12 @@ const Continent = ({id, continentArea, continentName}) => {
   }, [id])
 
   return (
-    <div className="continent" id={id}>
+    <div className="continent">
       <h1>{continentName}</h1>
       <h3>{continentArea}</h3>
       <div className="discover-countries">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#000" d="M17.77 3.77L16 2L6 12l10 10l1.77-1.77L9.54 12z"/></svg>
-        {countries.map(country => <Country key={country.id} id={country.id} name={country.name} currency={country.currency} image={country.image} description={country.description}/>)}
+        {countries.map(country => <Country key={country.id} continentID={id} id={country.id} name={country.name} currency={country.currency} image={country.image} description={country.description}/>)}
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#000" d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"/></svg>
       </div>
     </div>

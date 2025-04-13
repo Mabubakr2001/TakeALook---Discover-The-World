@@ -56,10 +56,12 @@ const NavBar = () => {
 
   return (
     <div className="navigation">
-      {signedIn && userImage && <img src={userImage} alt="User Image" className="user-image"/>}
-      <Button text={signedIn ? "Sign Out" : "Sign In"} clickingOperation={!signedIn ? signInHandler : signOutHandler}/>
+      <h1 className="logo">TakeAL<span className="eye">o</span><span className="eye">o</span>k</h1>
       <SearchInput />
-      <Button text="Favorites" />
+      <div className="user-logging">
+        <Button text={signedIn ? "Sign Out" : "Sign In"} type="signing-btn" clickingOperation={!signedIn ? signInHandler : signOutHandler}/>
+        {signedIn && userImage && <img src={userImage} alt="User Image" className="user-image"/>}
+      </div>
     </div>
   )
 }
